@@ -129,6 +129,8 @@ CPython implements garbage collection with GIL \(global interpreter lock\).
 
 In Python everything is object. In Python 3 every type is child class of `object`.
 
+Python variables works like references. There are mutable and immutable types. Objects of immutable types can not be changed and just copied on assignment. Variable of mutable type just gets new reference on assignment.
+
 Python 3 provides three scopes: local, global and nonlocal.
 
 * Local is default one and is bounded with module, class, method or function.
@@ -174,9 +176,40 @@ result: typing.Optional[str] = None
 
 ## Base types and data structures
 
-int float str list dict set tuple
+```python
+''' Immutable types '''
+# int
+i = 1
 
-Read-only types
+# float
+f1 = float(1)
+f2 = 1.0
+
+#bool
+b = True
+
+# str
+string = 'I am a string and i am immutable'
+
+```
+
+```python
+''' Mutable collections '''
+
+# list (dynamic array)
+l1 = list(range(3))
+l2 = [0, 1, 2, 3]
+l3 = [float(i) for i in range(10) if i % 2]  # With comprehensions expression
+
+# dict (associative array)
+d = {'zero': 0, 'one': 1, 'two': 2, 'three': 3}
+
+# set
+st = {0, 1, 2, 3}
+
+# tuple (fixed size array)
+t = (0, 1, 2, 3)
+```
 
 ## Strings
 
@@ -184,9 +217,69 @@ Standard types to store strings. Tools and practices to splice, search, copy, re
 
 ## Execution flow statements
 
-Loops, conditions and jump operator or recursion.
+```python
+if 'o' is not in 'Hello':
+    print('That is false')
+    
+# for works like foreach
+for i in range(10):
+    if i == 0:
+        continue  # Skip the remaining statements for this iteration
+    print(i)
+
+while True:
+    break  # leave the current cycle
+    
+# No goto :'(
+```
 
 ## Filesystem
+
+```python
+'''
+Reading and writing to file example
+'''
+
+from datetime import datetime
+
+# Open file and read contents
+f = open('data.txt', mode='w', encoding='utf-8-sig')
+f.write(str(datetime.now()))
+f.close()  # File should be closed after usage
+
+# With context manager
+with open('data.txt', mode='r') as f:
+    content: str = f.read()
+    empty = f.read()  # The reading pointer is on end of file already
+
+print(content)
+print(empty)
+```
+
+```python
+'''
+Exploring directories
+'''
+
+import os
+
+PATH = os.path.expanduser('~/')
+
+# Recursive directory traversal
+def deep_list(path):
+    for (dirpath, dirnames, filenames) in os.walk(path):
+        print(dirpath)
+
+# Iterate through directory listing
+for node_path in os.listdir(PATH):
+    abs_node_path = os.path.abspath(PATH + node_path)
+    if os.path.isfile(abs_node_path):
+        print(f'File {node_path}')
+    elif os.path.isdir(abs_node_path):
+        print(f'Directory {node_path}')
+
+
+```
 
 ## Exceptions
 
@@ -228,6 +321,17 @@ def function(value, flag, optional=None):
 def var_args_function(*args, **kvargs):
     pass
 
+# Generator funciton with yield keyword.
+# It can be iterated and calculates lazely (when a next value is needed).
+def gen(max=10):
+    i = 0
+    while i < max:
+        i += 2
+        yield(i)
+
+for val in gen():
+    print(val)
+
 list_of_odd = list(
     filter(
         lambda x: x % 2,  # lambda expression as arg of the filter function
@@ -239,6 +343,8 @@ list_of_odd = list(
 ## Object model
 
 Object-oriented programming tools, syntax of classes.
+
+TODO: decorators
 
 ## Asyncronous model
 
