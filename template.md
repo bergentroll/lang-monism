@@ -6,61 +6,61 @@ description: Defines structure for language pages
 
 ## Description
 
-Short description, supported paradigms, major links.
+_Short description, supported paradigms, major links._
 
 ## Toolset
 
-List of standard and major libraries, compilers, linters etc with links.
+_List of standard and major libraries, compilers, linters etc with links._
 
 ## Comments
 
-Code documentation syntax and agreements.
+_Code documentation syntax and agreements._
 
 ## Project model
 
-Modules, import or including. Major project files, common structure of library and application. Local environment.
+_Modules, import or including. Major project files, common structure of library and application. Local environment._
 
 ## Type system
 
-* Dynamic or static
-* Strong or weak
-* Explicit or implicit
+* _Dynamic or static_
+* _Strong or weak_
+* _Explicit or implicit_
 
-Scopes, variables lifecycle, copying and referencing, modificators like constant.
+_Scopes, variables lifecycle, copying and referencing, modificators like constant._
 
-Generics.
+_Generics._
 
 ## Base types and data structures
 
-Built-in types, most common collections.
+_Built-in types, most common collections._
 
 ## Strings
 
-Standard types to store strings. Tools and practices to splice, search, copy, replace textual data.
+_Standard types to store strings. Tools and practices to splice, search, copy, replace textual data._
 
 ## Execution flow statements
 
-Loops, conditions and jump operator or recursion.
+_Loops, conditions and jump operator or recursion._
 
 ## Exceptions
 
-Handling exceptions or errors. Major exceptions hierarchy.
+_Handling exceptions or errors. Major exceptions hierarchy._
 
 ## Subroutines
 
-Functions, procedures, lambda expressions etc.
+_Functions, procedures, lambda expressions etc._
 
-Introspection
+## Introspection
 
 ## Object model
 
-Object-oriented programming tools, syntax of classes.
+_Object-oriented programming tools, syntax of classes._
 
 ## Asyncronous model
 
-Asyncronous calls, multithreading, multiprocessing.
+_Asyncronous calls, multithreading, multiprocessing._
 
 ## Style guides
 
-Major naming and structuring points.
+_Major naming and structuring points._
 
