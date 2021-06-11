@@ -213,7 +213,7 @@ t = (0, 1, 2, 3)
 
 ## Strings
 
-Standard types to store strings. Tools and practices to splice, search, copy, replace textual data.
+_Standard types to store strings. Tools and practices to splice, search, copy, replace textual data._
 
 ## Execution flow statements
 
@@ -352,5 +352,5 @@ Asyncronous calls, multithreading, multiprocessing.
 
 ## Style guides
 
-Major naming and structuring points.
+_Major naming and structuring points._
 
