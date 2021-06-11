@@ -17,56 +17,58 @@ _Sample of code flow._
 
 ## Comments
 
-Code documentation syntax and agreements.
+_Code documentation syntax and agreements._
 
 ## Project model
 
-Modules, import or including. Major project files, common structure of library and application. Local environment.
+_Modules, import or including. Major project files, common structure of library and application. Local environment._
 
 ## Type system
 
-* Dynamic or static
-* Strong or weak
-* Explicit or implicit
+_* Dynamic or static_
+_* Strong or weak_
+_* Explicit or implicit_
 
-Scopes, variables lifecycle, copying and referencing, modificators like constant.
+_Scopes, variables lifecycle, copying and referencing, modificators like constant._
 
-Generics.
+_Generics._
 
 ## Base types and data structures
 
-Built-in types, most common collections.
+_Built-in types, most common collections._
 
 ## Strings
 
-Standard types to store strings. Tools and practices to splice, search, copy, replace textual data.
+_Standard types to store strings. Tools and practices to splice, search, copy, replace textual data._
 
 ## Execution flow statements
 
-Loops, conditions and jump operator or recursion.
+_Loops, conditions and jump operator or recursion._
 
 ## Subroutines
 
 _Functions, procedures, lambda expressions etc._
 
+## Object model
+
+_Object-oriented programming tools, syntax of classes._
+
+## Exceptions
+
+_Handling exceptions or errors. Major exceptions hierarchy._
+
+## Filesystem
+
+_Most common tools to deal with files and directories._
+
 ## Introspection
 
 _Reflection and metaprogramming tools._
 
-## Exceptions
-
-Handling exceptions or errors. Major exceptions hierarchy.
-
-
-## Object model
-
-Object-oriented programming tools, syntax of classes.
-
 ## Asyncronous model
 
-Asyncronous calls, multithreading, multiprocessing.
+_Asyncronous calls, multithreading, multiprocessing._
 
 ## Style guides
 
-Major naming and structuring points.
-
+_Major naming and structuring points._
