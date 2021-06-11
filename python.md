@@ -233,6 +233,69 @@ while True:
 # No goto :'(
 ```
 
+## Subroutines
+
+```python
+# Functions may or may not return values and have args.
+# Functions are objects.
+def function(value, flag, optional=None):
+    return (value, flag)  # Return a tuple
+
+# args is a list of positional arguments, kvargs is a dict of named arguments
+def var_args_function(*args, **kvargs):
+    pass
+
+# Generator funciton with yield keyword.
+# It can be iterated and calculates lazely (when a next value is needed).
+def gen(max=10):
+    i = 0
+    while i < max:
+        i += 2
+        yield(i)
+
+for val in gen():
+    print(val)
+
+list_of_odd = list(
+    filter(
+        lambda x: x % 2,  # lambda expression as arg of the filter function
+        range(10)))
+```
+
+## Object model
+
+_Object-oriented programming tools, syntax of classes._
+
+_TODO: decorators, ABS_
+
+## Exceptions
+
+```python
+# Defines custom exception
+class MyError(Exception):
+    ...
+
+# Raises exception
+def my_func():
+    raise MyError('Something goes wrong')
+
+try:  # Wrap code into try block to handle exceptions
+    my_func()
+except (KeyError, MyError) as error:  # Catches KeyError and MyError
+    print(f'Exception {type(error).__name__} with text {error} catched.')
+
+```
+
+Exception types grouped into class hierarhy:
+
+* BaseException
+  *  Exception
+    * RuntimeError
+    * SystemError
+    * SyntaxError
+    * ...
+  * ...
+
 ## Filesystem
 
 ```python
@@ -281,70 +344,7 @@ for node_path in os.listdir(PATH):
 
 ```
 
-## Exceptions
-
-```python
-# Defines custom exception
-class MyError(Exception):
-    ...
-
-# Raises exception
-def my_func():
-    raise MyError('Something goes wrong')
-
-try:  # Wrap code into try block to handle exceptions
-    my_func()
-except (KeyError, MyError) as error:  # Catches KeyError and MyError
-    print(f'Exception {type(error).__name__} with text {error} catched.')
-
-```
-
-Exception types grouped into class hierarhy:
-
-* BaseException
-  *  Exception
-    * RuntimeError
-    * SystemError
-    * SyntaxError
-    * ...
-  * ...
-
-## Subroutines
-
-```python
-# Functions may or may not return values and have args.
-# Functions are objects.
-def function(value, flag, optional=None):
-    return (value, flag)  # Return a tuple
-
-# args is a list of positional arguments, kvargs is a dict of named arguments
-def var_args_function(*args, **kvargs):
-    pass
-
-# Generator funciton with yield keyword.
-# It can be iterated and calculates lazely (when a next value is needed).
-def gen(max=10):
-    i = 0
-    while i < max:
-        i += 2
-        yield(i)
-
-for val in gen():
-    print(val)
-
-list_of_odd = list(
-    filter(
-        lambda x: x % 2,  # lambda expression as arg of the filter function
-        range(10)))
-```
-
 ## Introspection
-
-## Object model
-
-Object-oriented programming tools, syntax of classes.
-
-TODO: decorators
 
 ## Asyncronous model
 
