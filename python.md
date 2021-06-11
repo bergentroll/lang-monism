@@ -14,6 +14,7 @@ Unix-friendly scripting language with clear and simple synax as a goal. Designed
 * [PyPI](https://pypi.org/) — official modules repository
 * [IPython](https://ipython.org/) — advanced Python shell.
 * [flake8](https://gitlab.com/pycqa/flake8) — linting tool wrapped up few utilities
+* [Pylint](https://www.pylint.org/) — another major linter
 * [mypy](http://mypy-lang.org/) — type checker
 * [Django](https://www.djangoproject.com/) — popular MVC web-framework
 * [NumPy](https://numpy.org/) — math library with comprehensive matrixes support
@@ -165,7 +166,7 @@ def worker(data: typing.List[str]) -> None:
     '''
     for item in data:
         print(item)
-        
+
 # Variable annotated as typing.Union may be one of pointed to Union types
 value: typing.Union[str, int, bool] = 'I am a string'
 value = True  # It is valid
@@ -190,7 +191,6 @@ b = True
 
 # str
 string = 'I am a string and i am immutable'
-
 ```
 
 ```python
@@ -220,7 +220,7 @@ _Standard types to store strings. Tools and practices to splice, search, copy, r
 ```python
 if 'o' is not in 'Hello':
     print('That is false')
-    
+
 # for works like foreach
 for i in range(10):
     if i == 0:
@@ -229,7 +229,7 @@ for i in range(10):
 
 while True:
     break  # leave the current cycle
-    
+
 # No goto :'(
 ```
 
@@ -283,13 +283,12 @@ try:  # Wrap code into try block to handle exceptions
     my_func()
 except (KeyError, MyError) as error:  # Catches KeyError and MyError
     print(f'Exception {type(error).__name__} with text {error} catched.')
-
 ```
 
 Exception types grouped into class hierarhy:
 
 * BaseException
-  *  Exception
+  * Exception
     * RuntimeError
     * SystemError
     * SyntaxError
@@ -340,8 +339,6 @@ for node_path in os.listdir(PATH):
         print(f'File {node_path}')
     elif os.path.isdir(abs_node_path):
         print(f'Directory {node_path}')
-
-
 ```
 
 ## Introspection
@@ -352,5 +349,28 @@ Asyncronous calls, multithreading, multiprocessing.
 
 ## Style guides
 
-_Major naming and structuring points._
+[PEP8](https://www.python.org/dev/peps/pep-0008/) is a comprehensive style guide. [Toolset](python.md#toolset) section gives some most comon linting tools.
+
+```python
+'''
+Exaple shows most common naming and code structure conventions
+'''
+
+import os
+import datetime  # Separate imports
+
+GLOBAL_VAR = 'Value'
+
+
+# Two empty lines before functions
+def my_function(val, flag=True):  # No spaces around = in args list
+    pass  # 4 spaces for indented blocks
+
+
+# Two empty lines before class defenitions
+class MyClass:
+    def __init__(self):
+        local_var = 50
+        self.property = 100
+```
 
