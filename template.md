@@ -6,11 +6,14 @@ description: Defines structure for language pages
 
 ## Description
 
-Short description, supported paradigms, major links.
+_Short description, supported paradigms, major links._
 
 ## Toolset
 
-List of standard and major libraries, compilers, linters etc with links.
+_List of standard and major libraries, compilers, linters etc with links._
+
+## Basic syntax
+_Sample of code flow._
 
 ## Comments
 
@@ -42,15 +45,18 @@ Standard types to store strings. Tools and practices to splice, search, copy, re
 
 Loops, conditions and jump operator or recursion.
 
+## Subroutines
+
+_Functions, procedures, lambda expressions etc._
+
+## Introspection
+
+_Reflection and metaprogramming tools._
+
 ## Exceptions
 
 Handling exceptions or errors. Major exceptions hierarchy.
 
-## Subroutines
-
-Functions, procedures, lambda expressions etc.
-
-Introspection
 
 ## Object model
 
