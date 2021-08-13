@@ -2,10 +2,10 @@
 
 ## Description
 
-Unix-friendly scripting language with clear and simple synax as a goal. Designed by Guido van Rossum at early 1990s. It based on object model, supports functional programming idioms and metaprogramming .
+Unix-friendly scripting language with clear and simple syntax as a goal. Designed by Guido van Rossum at early 1990s. It based on object model, supports functional programming idioms and metaprogramming .
 
 * [Homepage](https://www.python.org/)
-* [PEP](https://www.python.org/dev/peps/) —  Python Enhancement Proposals, standarts of language
+* [PEP](https://www.python.org/dev/peps/) —  Python Enhancement Proposals, standards of language
 
 ## Toolset
 
@@ -213,7 +213,53 @@ t = (0, 1, 2, 3)
 
 ## Strings
 
-_Standard types to store strings. Tools and practices to splice, search, copy, replace textual data._
+`str` is a built-in immutable type for strings. There is member access
+operations like as `list` has.
+
+```python
+# Both '' and "" are valid and equal for string literals
+s: str = "This is" + ' the string variable.'
+
+# Taking slice (produce a new string)
+s[0:10]
+
+# Test ending of string
+s.endswidth('able.')
+
+# Find first matching of substring
+s.find('iab')
+
+# Make a list of tokens
+s.split()
+
+# Join collection of strings with string
+', '.join(s.split())
+
+# Replace every match of 'i' with 'o'
+s.replace('i', 'o')
+```
+
+There is three major ways of string formatting:
+```python
+
+x = 10
+y = 15
+
+# Plain concatenation (not actually formatting)
+s = 'Coordinates is ' + str(x) + ':' + str(y)
+
+# Modern in-place f-strings
+s = f'Coordinates is {x}:{y}'
+
+# str.format() method
+s = 'Coordinates is {}:{}'.format(x, y)
+
+# Oldschool C-style
+s = 'Coordinates is %i:%i' % (x,  y)
+
+# There is also formatting syntax for placeholders
+f'{x:10.2f}'
+```
 
 ## Execution flow statements
 
