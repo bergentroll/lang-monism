@@ -213,8 +213,7 @@ t = (0, 1, 2, 3)
 
 ## Strings
 
-`str` is a built-in immutable type for strings. There is member access
-operations like as `list` has.
+`str` is a built-in immutable type for strings. There is member access operations like as `list` has.
 
 ```python
 # Both '' and "" are valid and equal for string literals
@@ -240,8 +239,8 @@ s.replace('i', 'o')
 ```
 
 There is three major ways of string formatting:
-```python
 
+```python
 x = 10
 y = 15
 
@@ -262,6 +261,8 @@ f'{x:10.2f}'
 ```
 
 ## Execution flow statements
+
+There are `if`,`else` statements and `for`, `while` loops.
 
 ```python
 if 'o' is not in 'Hello':
@@ -310,9 +311,55 @@ list_of_odd = list(
 
 ## Object model
 
-_Object-oriented programming tools, syntax of classes._
+Python has `class` keyword for user-defined complex types.
 
-_TODO: decorators, ABS_
+```python
+# User defined type
+class MyType:
+    # Class level variable
+    COUNTER = 0
+
+    # Constructor, self is a reference on object itself
+    def __init__(self, name=''):
+        # Instance level variable
+        self.name = name
+        # Prepended underscore means the member is private
+        # therefore it is just an agreement for users
+        self._secret_name = f'Secret name {name}'
+        MyType.COUNTER += 1
+
+    # Destructor
+    def __del__(self):
+        MyType.COUNTER -= 1
+
+    # Ordinary member function, getter
+    def get_secret_name(self):
+        return self._secret_name
+
+    # property decorator creates calculable data member
+    @property
+    def upper_name(self):
+        return self.name.upper()
+
+# Constructing an instance
+obj = MyType('Object Jonny')
+
+# Accessing object members
+obj.name
+obj.COUNTER
+obj.get_secret_name()
+# "Private" members are still accessible
+obj._secret_name
+obj.upper_name
+```
+
+There are bunch of special dunder methods know as magic and used for overloading.
+
+```text
+# TODO __add__() and other magic
+```
+
+_TODO Inheritance, ABC_
 
 ## Exceptions
 
@@ -331,7 +378,7 @@ except (KeyError, MyError) as error:  # Catches KeyError and MyError
     print(f'Exception {type(error).__name__} with text {error} catched.')
 ```
 
-Exception types grouped into class hierarhy:
+Exception types grouped into class hierarchy:
 
 * BaseException
   * Exception
@@ -395,7 +442,7 @@ Asyncronous calls, multithreading, multiprocessing.
 
 ## Style guides
 
-[PEP8](https://www.python.org/dev/peps/pep-0008/) is a comprehensive style guide. [Toolset](python.md#toolset) section gives some most comon linting tools.
+[PEP8](https://www.python.org/dev/peps/pep-0008/) is a comprehensive style guide. [Toolset](python.md#toolset) section gives some most common linting tools.
 
 ```python
 '''
