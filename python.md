@@ -436,6 +436,76 @@ for node_path in os.listdir(PATH):
 
 ## Introspection
 
+Built-in function `type(obj)` returns a type of a passed object.
+
+Built-in functions `isinstance(obj, typename)`, `issubclass(typename_a,
+typename_b)` is useful to explore hierarchies of classes.
+
+
+```python
+class A:
+    ...
+
+
+class B(A):
+    ...
+
+
+class C:
+    ...
+
+
+a = A()
+
+isinstance(a, A) == True
+isinstance(a, B) == False
+
+issubclass(B, A) == True
+issubclass(C, A) == False
+issubclass(C, object) == True
+
+type(a).__name__
+
+b = B()
+
+issubclass(type(b), A) == True
+```
+
+The `inspect` module provides useful tools to explore objects' attributes.
+
+```python
+iimport sys
+import inspect
+
+
+class A:
+    def method_a(self):
+        ...
+
+
+class B(A):
+    def method_b(self):
+        ...
+
+
+b = B()
+
+# Thera are a plenty of other inspect.as*(obj) functions also
+inspect.isclass(B)
+inspect.ismethod(b.method_b)
+
+# Make list of names of object methods
+[name for name, type_ in inspect.getmembers(b)
+    if inspect.ismethod(type_)] == ['method_a', 'method_b']
+
+# Make list of types in current module
+[type_ for name, type_ in inspect.getmembers(sys.modules[__name__])
+    if inspect.isclass(type_)] == [A, B]
+
+# Get method resolving order sequence
+inspect.getmro(B) == (B, A, object)
+```
+
 ## Asyncronous model
 
 Asyncronous calls, multithreading, multiprocessing.
