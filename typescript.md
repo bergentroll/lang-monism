@@ -21,6 +21,8 @@ Modern fast dynamic ECMAScript complaint language, it uses to replace JavaScript
 
 _Sample of code flow._
 
+C-like syntax with `{;}`
+
 ## Comments
 
 _Code documentation syntax and agreements._
