@@ -8,14 +8,7 @@ description: Defines structure for language pages
 
 _Short description, supported paradigms, major links._
 
-One of early OOP languages, C++ invented by __ Bjarne Stroustrup in 80s as a superset of the C language. Low level at a one hand, powerful at a second, still evolutioning at another one.
-
-There are C++03, C++11, C++14, C++17 and C++20 present-day standards, where number means year of acceptance.
-
-C++ provides procedural, objective and build time generic paradigms of coding.
-
-* [C++ reference](https://en.cppreference.com/w/cpp) — free online documentation with offline options :book:
-* [Standard C++](https://isocpp.org/) — official site devoted to ISO standard of the lang :globe\_with\_meridians:
+* __[_C++ reference_](https://en.cppreference.com/w/cpp) __ — _free online documentation with offline options_
 
 ## Toolset
 

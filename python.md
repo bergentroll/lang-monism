@@ -2,10 +2,10 @@
 
 ## Description
 
-Unix-friendly scripting language with clear and simple syntax as a goal. Designed by Guido van Rossum at early 1990s. It based on object model, supports functional programming idioms and metaprogramming .
+Unix-friendly scripting language with clear and simple syntax as a goal. Designed by Guido van Rossum at early 1990s. It based on object model, supports functional programming idioms and metaprogramming.
 
-* [Homepage](https://www.python.org/)
-* [PEP](https://www.python.org/dev/peps/) — Python Enhancement Proposals, standards of language
+* [Homepage](https://www.python.org/) :snake:
+* [PEP](https://www.python.org/dev/peps/) — Python Enhancement Proposals, standards of language :blue\_book:
 
 ## Toolset
 
@@ -378,15 +378,16 @@ except (KeyError, MyError) as error:  # Catches KeyError and MyError
     print(f'Exception {type(error).__name__} with text {error} catched.')
 ```
 
-Exception types grouped into class hierarchy:
+There is nice builtin [exceptions hierarchy](https://docs.python.org/3/library/exceptions.html). Most useful classes are `Exception`, `RuntimeError`, `SyntaxError`, `NotImplementedError`,  `TypeError` and also FileNotFoundError.
 
-* BaseException
-  * Exception
-    * RuntimeError
-    * SystemError
-    * SyntaxError
-    * ...
-  * ...
+Custom Exceptions should inherit the appropriate builtin type.
+
+```python
+try:
+    ...
+except:  # Generic excepting is possible but not recommended
+    ...
+```
 
 ## Filesystem
 
