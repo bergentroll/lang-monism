@@ -378,15 +378,16 @@ except (KeyError, MyError) as error:  # Catches KeyError and MyError
     print(f'Exception {type(error).__name__} with text {error} catched.')
 ```
 
-Exception types grouped into class hierarchy:
+There is nice builtin [exceptions hierarchy](https://docs.python.org/3/library/exceptions.html). Most useful classes are `Exception`, `RuntimeError`, `SyntaxError`, `NotImplementedError`,  `TypeError` and also FileNotFoundError.
 
-* BaseException
-  * Exception
-    * RuntimeError
-    * SystemError
-    * SyntaxError
-    * ...
-  * ...
+Custom Exceptions should inherit the appropriate builtin type.
+
+```python
+try:
+    ...
+except:  # Generic excepting is possible but not recommended
+    ...
+```
 
 ## Filesystem
 
