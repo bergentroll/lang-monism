@@ -5,11 +5,11 @@
 Unix-friendly scripting language with clear and simple syntax as a goal. Designed by Guido van Rossum at early 1990s. It based on object model, supports functional programming idioms and metaprogramming .
 
 * [Homepage](https://www.python.org/)
-* [PEP](https://www.python.org/dev/peps/) —  Python Enhancement Proposals, standards of language
+* [PEP](https://www.python.org/dev/peps/) — Python Enhancement Proposals, standards of language
 
 ## Toolset
 
-* [CPython](https://www.python.org/) — most popular reference environment \(interpreter and standard library\)
+* [CPython](https://www.python.org/) — most popular reference environment (interpreter and standard library)
 * [pip](https://pip.pypa.io/en/stable/) — package manager
 * [PyPI](https://pypi.org/) — official modules repository
 * [IPython](https://ipython.org/) — advanced Python shell.
@@ -113,7 +113,7 @@ python main.py
 
 Requirements file is used to keep project dependencies:
 
-```text
+```
 # Comments are allowed
 reportlab
 # Version may be speciefied with comparison operator
@@ -124,9 +124,9 @@ numpy==1.20.0
 
 ## Type system
 
-Python has dynamic \(duck typing\) strong implicit type system.
+Python has dynamic (duck typing) strong implicit type system.
 
-CPython implements garbage collection with GIL \(global interpreter lock\).
+CPython implements garbage collection with GIL (global interpreter lock).
 
 In Python everything is object. In Python 3 every type is child class of `object`.
 
@@ -355,7 +355,7 @@ obj.upper_name
 
 There are bunch of special dunder methods know as magic and used for overloading.
 
-```text
+```
 # TODO __add__() and other magic
 ```
 
@@ -438,9 +438,7 @@ for node_path in os.listdir(PATH):
 
 Built-in function `type(obj)` returns a type of a passed object.
 
-Built-in functions `isinstance(obj, typename)`, `issubclass(typename_a,
-typename_b)` is useful to explore hierarchies of classes.
-
+Built-in functions `isinstance(obj, typename)`, `issubclass(typename_a, typename_b)` is useful to explore hierarchies of classes.
 
 ```python
 class A:
@@ -508,7 +506,11 @@ inspect.getmro(B) == (B, A, object)
 
 ## Asyncronous model
 
-Asyncronous calls, multithreading, multiprocessing.
+Three major models in modern Python:
+
+* Threads based with [threading](https://docs.python.org/3/library/multiprocessing.html) module. Uses OS threads, but hardly limited with GIL (global interpreter lock), which means performance comatible to single thread.:snail:
+* Processes based with [multiprocessing](https://docs.python.org/3/library/multiprocessing.html) module. Allow to efficiently spread load between CPU cores, but have&#x20;
+* Coroutins concurrency with [asyncio](python.md#asyncronous-model) module.
 
 ## Style guides
 
@@ -536,4 +538,3 @@ class MyClass:
         local_var = 50
         self.property = 100
 ```
-
