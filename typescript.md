@@ -1,7 +1,3 @@
----
-description: Defines structure for language pages
----
-
 # TypeScript
 
 ## Description

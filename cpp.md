@@ -1,14 +1,19 @@
 ---
-description: Defines structure for language pages
+description: С++
 ---
 
 # CPP
 
 ## Description
 
-_Short description, supported paradigms, major links._
+One of early OOP languages, C++ invented by __ Bjarne Stroustrup in 80s as a superset of the C language. Low level at a one hand, powerful at a second, still evolutioning at another one.
 
-* __[_C++ reference_](https://en.cppreference.com/w/cpp) __ — _free online documentation with offline options_
+There are C++03, C++11, C++14, C++17 and C++20 present-day standards, where number means year of acceptance.
+
+C++ provides procedural, objective and build time generic paradigms of coding.
+
+* [C++ reference](https://en.cppreference.com/w/cpp) — free online documentation with offline options :book:
+* [Standard C++](https://isocpp.org/) — official site devoted to ISO standard of the lang :globe\_with\_meridians:
 
 ## Toolset
 
@@ -20,7 +25,30 @@ _Short description, supported paradigms, major links._
 
 ## Basic syntax
 
-_Sample of code flow._
+```cpp
+#include <iostream>
+
+// Single line comment
+
+/* Multiline comment
+ * <- this asterisk is just for tidiness
+ */
+
+// Function
+void hello_world() {
+  // As you can see, code blocks is fenced with curly braces
+  std::cout << "Hello, world!" << std::endl;
+  // The semicolon splits lexical tokens
+  // and also it is a no-op operator
+  ;;;
+}
+
+// The main function is the entrypoint of code
+int main(int argc, char** argv) {
+  hello_world();
+  return EXIT_SUCCESS;
+}
+```
 
 ## Comments
 
