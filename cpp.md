@@ -21,6 +21,7 @@ C++ provides procedural, objective and build time generic paradigms of coding.
 * [CLang](https://clang.llvm.org/) — popular LLVM based compiler
 * [Boost](https://www.boost.org/) — giant libraries collection which is a "semi-standard library"
 * [CMake](https://cmake.org/) — modern build system
+* [Doxygen](https://doxygen.nl/) — tool to generate documentation with comments and types hierarhies
 * [Valgrind](https://valgrind.org/) — anslizys tool with memory leaks detection
 * [Ccache](https://ccache.dev/) — compiler cache which can speedup project building dramatically
 
@@ -28,12 +29,6 @@ C++ provides procedural, objective and build time generic paradigms of coding.
 
 ```cpp
 #include <iostream>
-
-// Single line comment
-
-/* Multiline comment
- * <- this asterisk is just for tidiness
- */
 
 // Function
 void hello_world() {
