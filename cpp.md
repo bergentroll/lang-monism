@@ -22,6 +22,7 @@ C++ provides procedural, objective and build time generic paradigms of coding.
 * [Boost](https://www.boost.org/) — giant libraries collection which is a "semi-standard library"
 * [CMake](https://cmake.org/) — modern build system
 * [Valgrind](https://valgrind.org/) — anslizys tool with memory leaks detection
+* [Ccache](https://ccache.dev/) — compiler cache which can speedup project building dramatically
 
 ## Basic syntax
 
@@ -53,6 +54,29 @@ int main(int argc, char** argv) {
 ## Comments
 
 _Code documentation syntax and agreements._
+
+```cpp
+# include <iostream>
+# include <string>
+
+// Single line comment
+
+/* Multiline comment
+ * <- this asterisk is just for tidiness
+ */
+
+// Doxygen styled annotation:
+/** @brief Short function description
+ *
+ *  Print given strign and return it's length
+ *  @param str String to print
+ *  @return length of string
+ */
+int hello_world(const std::string& str) {
+  std::cout << str << std::endl;
+  return str.length();
+}
+```
 
 ## Project model
 
