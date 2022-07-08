@@ -2,10 +2,10 @@
 
 ## Description
 
-Unix-friendly scripting language with clear and simple syntax as a goal. Designed by Guido van Rossum at early 1990s. It based on object model, supports functional programming idioms and metaprogramming .
+Unix-friendly scripting language with clear and simple syntax as a goal. Designed by Guido van Rossum at early 1990s. It based on object model, supports functional programming idioms and metaprogramming.
 
-* [Homepage](https://www.python.org/)
-* [PEP](https://www.python.org/dev/peps/) — Python Enhancement Proposals, standards of language
+* [Homepage](https://www.python.org/) :snake:
+* [PEP](https://www.python.org/dev/peps/) — Python Enhancement Proposals, standards of language :blue\_book:
 
 ## Toolset
 
@@ -378,15 +378,16 @@ except (KeyError, MyError) as error:  # Catches KeyError and MyError
     print(f'Exception {type(error).__name__} with text {error} catched.')
 ```
 
-Exception types grouped into class hierarchy:
+There is nice builtin [exceptions hierarchy](https://docs.python.org/3/library/exceptions.html). Most useful classes are `Exception`, `RuntimeError`, `SyntaxError`, `NotImplementedError`,  `TypeError` and also FileNotFoundError.
 
-* BaseException
-  * Exception
-    * RuntimeError
-    * SystemError
-    * SyntaxError
-    * ...
-  * ...
+Custom Exceptions should inherit the appropriate builtin type.
+
+```python
+try:
+    ...
+except:  # Generic excepting is possible but not recommended
+    ...
+```
 
 ## Filesystem
 
@@ -511,6 +512,32 @@ Three major models in modern Python:
 * Threads based with [threading](https://docs.python.org/3/library/multiprocessing.html) module. Uses OS threads, but hardly limited with GIL (global interpreter lock), which means performance comatible to single thread.:snail:
 * Processes based with [multiprocessing](https://docs.python.org/3/library/multiprocessing.html) module. Allow to efficiently spread load between CPU cores, but have&#x20;
 * Coroutins concurrency with [asyncio](python.md#asyncronous-model) module.
+
+{% code title="asyncio_example1.py" %}
+```python
+import asyncio
+import typing
+
+
+# ↓ keyword async is built-in since 3.5 to mark awaitable coroutins
+async def job(string: str) -> None:
+    # ↓ keyword is a built-in that makes execution to wait a coroutine return
+    await asyncio.sleep(1)
+    # also the sleep ↑ from asyncio pauses an execution and allows to run other
+    # coroutines in the event loop
+    print(string)
+
+# False, job is just a function
+print(isinstance(job, typing.Awaitable))
+
+# But job returns a coroutine
+coro = job('job0')
+print(isinstance(coro, typing.Awaitable))
+
+# Let run the coro at last
+asyncio.run(coro)
+```
+{% endcode %}
 
 ## Style guides
 
