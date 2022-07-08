@@ -572,6 +572,47 @@ if __name__ == '__main__':
     asyncio.run(run_jobs_alt(30))
 ```
 
+And sometimes we want to get some return from asyncronouse tasks of course:
+
+```python
+import asyncio
+import random
+
+
+async def get_square(value: int) -> int:
+    print(f'Processing {value}')
+
+    # Let us pretend we waiting response from a remote
+    delay = random.random() * 3
+    await asyncio.sleep(delay)
+
+    result = value ** 2
+    print(f'{value} is processed')
+
+    return result
+
+
+async def run_jobs(amount: int) -> list:
+    tasks = []
+
+    print('\nBegin ordered, end sporadic:')
+    for i in range(1, amount + 1):
+        task = asyncio.create_task(get_square(i))
+        tasks.append(task)
+
+    await asyncio.wait(tasks)
+
+    # Tasks is already awaited, so we may call Task.result() without checking
+    # Task.done(), which may raises exception otherwise
+    return [t.result() for t in tasks]
+
+if __name__ == '__main__':
+    result_list = asyncio.run(run_jobs(10))
+
+    # Order is guaranteed because tasks are ordered in list
+    print('Result:', ', '.join([str(i) for i in result_list]))
+```
+
 ## Style guides
 
 [PEP8](https://www.python.org/dev/peps/pep-0008/) is a comprehensive style guide. [Toolset](python.md#toolset) section gives some most common linting tools.
