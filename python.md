@@ -513,7 +513,6 @@ Three major models in modern Python:
 * Processes based with [multiprocessing](https://docs.python.org/3/library/multiprocessing.html) module. Allow to efficiently spread load between CPU cores, but have&#x20;
 * Coroutins concurrency with [asyncio](python.md#asyncronous-model) module.
 
-{% code title="asyncio_example1.py" %}
 ```python
 import asyncio
 import typing
@@ -537,7 +536,41 @@ print(isinstance(coro, typing.Awaitable))
 # Let run the coro at last
 asyncio.run(coro)
 ```
-{% endcode %}
+
+But what a fun with a single corotine? :new\_moon\_with\_face:
+
+```python
+import asyncio
+
+
+async def job(string: str) -> None:
+    await asyncio.sleep(1)
+    print(string)
+
+
+# Wrapper functions is usual for coroutins
+async def run_jobs(amount: int) -> None:
+    tasks = []
+
+    for i in range(1, amount + 1):
+        # Tasks give more control over coroutine execution and return
+        task = asyncio.create_task(job(f'job-{i:02}'))
+        tasks.append(task)
+
+    await asyncio.wait(tasks)
+
+
+async def run_jobs_alt(amount: int) -> None:
+    # gather() is an option too
+    await asyncio.gather(
+        *[job(f'alt-job-{i:02}') for i in range(1, amount + 1)])
+
+if __name__ == '__main__':
+    # Order is not guaranteed of course
+    asyncio.run(run_jobs(30))
+
+    asyncio.run(run_jobs_alt(30))
+```
 
 ## Style guides
 
