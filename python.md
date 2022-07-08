@@ -25,6 +25,8 @@ Execution `python` or `ipython` gives an interactive shell in REPL mode. `help()
 
 ## Basic syntax
 
+Python has similarity with C language, but syntax is not C-like. Blocks are define with indentation level. It is an object of displeasure of someones, but also it forces code to bee more structured and tidy. Switching between brackets and indentation always takes some time.
+
 ```python
 #! /bin/env python
 
